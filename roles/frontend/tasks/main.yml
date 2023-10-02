@@ -1,10 +1,17 @@
-#source common.sh
+- name: Install Nginx
+  ansible.builtin.yum:
+    name: nginx
+    state: installed
 
-#log=/tmp/roboshop.log
+- name: Start Nginx
+  ansible.builtin.systemd:
+    name: nginx
+    state: restarted
+    enabled: yes
 
-#echo -e "\e[36m>>>>>>>>>>>> Install Nginx <<<<<<<<< \e[0m" | tee -a /tmp/roboshop.log
-#dnf install nginx -y &>>${log}
-#func_exit_status
+-name: Copy Roboshop configuration
+ ansible.builtin.copy:
+   -
 
 #echo -e "\e[36m>>>>>>>>>>>> Copy Roboshop configuration <<<<<<<<< \e[0m" | tee -a /tmp/roboshop.log
 #cp nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf &>>${log}
@@ -23,13 +30,4 @@
 #unzip /tmp/frontend.zip &>>${log}
 #func_exit_status
 
-- name: Install Nginx
-  ansible.builtin.yum:
-    name: nginx
-    state: installed
 
-- name: Start Nginx
-  ansible.builtin.systemd:
-    name: nginx
-    state: restarted
-    enabled: yes
