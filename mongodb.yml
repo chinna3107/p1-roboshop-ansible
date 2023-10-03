@@ -9,7 +9,7 @@
 
     - name: Install Mongodb
       ansible.builtin.yum:
-        name: mongo-db org
+        name: mongodb-org
         state: installed
 
     - name: Replace listener address in mogodb configuration
@@ -20,7 +20,7 @@
 
     - name: Start mongodb services
       ansible.builtin.systemd:
-        name: mongodb
+        name: mongod
         state: restarted
         enabled: yes
 
