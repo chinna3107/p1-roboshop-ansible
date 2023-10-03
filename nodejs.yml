@@ -15,4 +15,4 @@
     chdir: /app
 
 - name: Schema Setup
-  ansible.builtin.import_tasks: app-preq .yml
+  ansible.builtin.import_tasks: app-preq.yml
