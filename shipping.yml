@@ -1,8 +1,8 @@
-- name: User setup
+- name: Shipping setup
   hosts: all
   become: yes
   vars:
-    component: user
+    component: shipping
     schema: true
 
   tasks:
