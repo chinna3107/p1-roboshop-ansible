@@ -15,7 +15,7 @@
 - name: Download application content
   ansible.builtin.unarchive:
     src: /etc/systemd/system/${{component}}.service
-    dest: /user/share/nginx/html
+    dest: /app
     remote_src: yes
 
 echo -e "\e[36m>>>>>>>>>>>> Create ${component} service <<<<<<<<< \e[0m" | tee -a /tmp/roboshop.log
