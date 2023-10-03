@@ -17,17 +17,3 @@
     src: /etc/systemd/system/${{component}}.service
     dest: /app
     remote_src: yes
-
-echo -e "\e[36m>>>>>>>>>>>> Create ${component} service <<<<<<<<< \e[0m" | tee -a /tmp/roboshop.log
-cp ${component}.service /etc/systemd/system/${component}.service &>>${log}
-func_exit_status
-
-
-echo -e "\e[36m>>>>>>>>>>>> Download application content  <<<<<<<<< \e[0m" | tee -a /tmp/roboshop.log
-curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>${log}
-cd /app &>>${log}
-func_exit_status
-
-echo -e "\e[36m>>>>>>>>>>>> Extract Application Content <<<<<<<<< \e[0m" | tee -a /tmp/roboshop.log
-unzip /tmp/${component}.zip &>>${log}
-func_exit_status

@@ -16,10 +16,3 @@
 
 - name: Schema Setup
   ansible.builtin.import_tasks: apppreq .yml
-       
-
-    func_schema_setup
-    
-    func_systemd
-
-  }
