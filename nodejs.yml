@@ -7,7 +7,7 @@
     state: installed
 
 - name: App Request
-  ansible.builtin.import_tasks: apppreq.yml
+  ansible.builtin.import_tasks: app-preq.yml
 
 - name: Download NodeJS dependencies
   ansible.builtin.shell: npm install
@@ -15,4 +15,4 @@
     chdir: /app
 
 - name: Schema Setup
-  ansible.builtin.import_tasks: apppreq .yml
+  ansible.builtin.import_tasks: app-preq .yml
