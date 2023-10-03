@@ -14,6 +14,6 @@
 
 - name: Download application content
   ansible.builtin.unarchive:
-    src: /etc/systemd/system/${{component}}.service
+    src: https://roboshop-artifacts.s3.amazonaws.com/{{component}}.zip
     dest: /app
     remote_src: yes
