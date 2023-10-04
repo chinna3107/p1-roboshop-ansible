@@ -1,4 +1,4 @@
-- name: Install Python
+- name: install python
   ansible.builtin.yum:
     name:
         - python36
@@ -9,7 +9,7 @@
 - name: App pre-requested
   ansible.builtin.import_tasks: app-preq.yml
 
-- name: Download NodeJS dependencies
+- name: Download Python dependencies
   ansible.builtin.shell: pip3.6 install -r requirements.txt
   args:
     chdir: /app
