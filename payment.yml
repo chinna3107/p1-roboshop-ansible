@@ -3,7 +3,6 @@
   become: yes
   vars:
     component: payment
-    schema: true
 
   tasks:
     - name: Python setup
